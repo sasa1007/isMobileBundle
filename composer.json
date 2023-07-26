@@ -1,0 +1,32 @@
+{
+  "name": "backend2/is-mobile-bundle",
+  "authors": [
+    {
+      "name": "Sasa Milivojevic",
+      "email": "sasam09@gmail.com"
+    }
+  ],
+  "description": "Check if site is started on Mobile or not",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "symfony/yaml": "6.3.*",
+    "symfony/config": "^v6.3.0",
+    "symfony/dependency-injection": "^v6.3.1",
+    "symfony/http-kernel": "^v6.3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "IsMobile\\IsMobileBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IsMobile\\IsMobileBundle\\Tests": "tests"
+    }
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "*"
+  }
+}
