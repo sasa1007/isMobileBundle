@@ -12,7 +12,7 @@ class IsMobile
     {
     }
 
-    public function isMobile()
+    public function isMobile(): bool
     {
         $isMobile = false;
 
