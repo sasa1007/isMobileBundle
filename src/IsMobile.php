@@ -21,7 +21,7 @@ class IsMobile
 
         $userAgent = $this->request->getCurrentRequest()->headers->get('User-Agent');
 
-        if ($userAgent !== null && (preg_match($this->getDevices(), $userAgent) || preg_match($this->getStr(), substr($userAgent, 0, 4)))) {
+        if ($userAgent !== null && (preg_match(self::getDevices(), $userAgent) || preg_match(self::getStr(), substr($userAgent, 0, 4)))) {
             $isMobile = true;
         }
         return $isMobile;
