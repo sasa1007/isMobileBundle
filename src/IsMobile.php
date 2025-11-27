@@ -16,9 +16,14 @@ class IsMobile
     {
         $isMobile = false;
 
-        $useragent = $this->request->getCurrentRequest()->headers->get('User-Agent');
+        $currentRequest = $this->request->getCurrentRequest();
+        if ($currentRequest === null) {
+            return $isMobile;
+        }
 
-        if (preg_match($this->getDevices(), $useragent) || preg_match($this->getStr(), substr($useragent, 0, 4))) {
+        $useragent = $currentRequest->headers->get('User-Agent') ?? '';
+
+        if ($useragent !== '' && (preg_match($this->getDevices(), $useragent) || preg_match($this->getStr(), substr($useragent, 0, 4)))) {
             $isMobile = true;
         }
         return $isMobile;

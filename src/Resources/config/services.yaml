@@ -1,5 +1,9 @@
 services:
-  IsMobile\IsMobileBundle\IsMobile:
-    arguments:
-      $request: '@request_stack'
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  IsMobile\IsMobileBundle\:
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,IsMobileBundle.php}'
 
